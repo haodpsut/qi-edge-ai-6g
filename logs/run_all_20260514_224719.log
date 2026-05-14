@@ -1,0 +1,452 @@
+=== run_all.sh started at Thứ năm, 14 Tháng 5 năm 2026 22:47:19 +07 ===
+host:    Ubuntu22
+user:    daipv11
+cwd:     /home/daipv11/qi-edge-ai-6g
+python:  Python 3.11.15
+torch:   2.3.1+cu121 cuda=True NVIDIA GeForce RTX 4090
+git:     d6fafb2
+models:  mlp cnn1d kan fkan cmlp
+seeds:   42 1337 7 2024 31415
+==================================
+
+=== model=mlp seed=42 @ 22:47:20 ===
+{
+  "model": "mlp",
+  "seed": 42,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3327,
+  "flops_m_per_sample": 0.00325,
+  "latency_ms_per_sample_cpu": 0.0369375990703702,
+  "train_time_s": 115.19851041864604,
+  "accuracy": 0.999655,
+  "f1_macro": 0.9802776267321083,
+  "f1_binary": 0.9998267389508416,
+  "precision": 0.9999196395835321,
+  "recall": 0.9997338555789896
+}
+
+=== model=mlp seed=1337 @ 22:49:30 ===
+{
+  "model": "mlp",
+  "seed": 1337,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3327,
+  "flops_m_per_sample": 0.00325,
+  "latency_ms_per_sample_cpu": 0.03633128013461828,
+  "train_time_s": 102.44792227074504,
+  "accuracy": 0.999685,
+  "f1_macro": 0.982073875479804,
+  "f1_binary": 0.9998418019511093,
+  "precision": 0.9999547954494086,
+  "recall": 0.9997288339861404
+}
+
+=== model=mlp seed=7 @ 22:51:25 ===
+{
+  "model": "mlp",
+  "seed": 7,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3327,
+  "flops_m_per_sample": 0.00325,
+  "latency_ms_per_sample_cpu": 0.036156391724944115,
+  "train_time_s": 109.43746339902282,
+  "accuracy": 0.99963,
+  "f1_macro": 0.9786182585890354,
+  "f1_binary": 0.9998141926671387,
+  "precision": 0.9998694254720771,
+  "recall": 0.9997589659639855
+}
+
+=== model=mlp seed=2024 @ 22:53:27 ===
+{
+  "model": "mlp",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3327,
+  "flops_m_per_sample": 0.00325,
+  "latency_ms_per_sample_cpu": 0.036864541471004486,
+  "train_time_s": 112.75184552976862,
+  "accuracy": 0.99958,
+  "f1_macro": 0.9758395568477711,
+  "f1_binary": 0.999789079331281,
+  "precision": 0.9998543547917274,
+  "recall": 0.9997238123932911
+}
+
+=== model=mlp seed=31415 @ 22:55:32 ===
+{
+  "model": "mlp",
+  "seed": 31415,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3327,
+  "flops_m_per_sample": 0.00325,
+  "latency_ms_per_sample_cpu": 0.037972801364958286,
+  "train_time_s": 111.2948115952313,
+  "accuracy": 0.999645,
+  "f1_macro": 0.9795202819006082,
+  "f1_binary": 0.9998217240539448,
+  "precision": 0.9998945333098963,
+  "recall": 0.999748925400715
+}
+
+=== model=cnn1d seed=42 @ 22:57:37 ===
+[W NNPACK.cpp:61] Could not initialize NNPACK! Reason: Unsupported hardware.
+{
+  "model": "cnn1d",
+  "seed": 42,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3742,
+  "flops_m_per_sample": 0.118602,
+  "latency_ms_per_sample_cpu": 0.24135613348335028,
+  "train_time_s": 117.26741743506864,
+  "accuracy": 0.99956,
+  "f1_macro": 0.9744559961718827,
+  "f1_binary": 0.9997790443668868,
+  "precision": 0.9998041480439913,
+  "recall": 0.9997539419503867
+}
+
+=== model=cnn1d seed=1337 @ 22:59:48 ===
+[W NNPACK.cpp:61] Could not initialize NNPACK! Reason: Unsupported hardware.
+{
+  "model": "cnn1d",
+  "seed": 1337,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3742,
+  "flops_m_per_sample": 0.118602,
+  "latency_ms_per_sample_cpu": 0.27092913165688515,
+  "train_time_s": 124.53986780624837,
+  "accuracy": 0.999515,
+  "f1_macro": 0.972585018172268,
+  "f1_binary": 0.9997564178864606,
+  "precision": 0.9998995393880944,
+  "recall": 0.9996133373506076
+}
+
+=== model=cnn1d seed=7 @ 23:02:06 ===
+[W NNPACK.cpp:61] Could not initialize NNPACK! Reason: Unsupported hardware.
+{
+  "model": "cnn1d",
+  "seed": 7,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3742,
+  "flops_m_per_sample": 0.118602,
+  "latency_ms_per_sample_cpu": 0.22262832149863243,
+  "train_time_s": 125.60789315868169,
+  "accuracy": 0.999475,
+  "f1_macro": 0.9698510209303559,
+  "f1_binary": 0.999736347178036,
+  "precision": 0.999819194511549,
+  "recall": 0.9996535135732292
+}
+
+=== model=cnn1d seed=2024 @ 23:04:26 ===
+[W NNPACK.cpp:61] Could not initialize NNPACK! Reason: Unsupported hardware.
+{
+  "model": "cnn1d",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3742,
+  "flops_m_per_sample": 0.118602,
+  "latency_ms_per_sample_cpu": 0.25523340329527855,
+  "train_time_s": 121.59796156315133,
+  "accuracy": 0.99953,
+  "f1_macro": 0.9728704923890186,
+  "f1_binary": 0.9997639732837844,
+  "precision": 0.9998141824025714,
+  "recall": 0.9997137692075927
+}
+
+=== model=cnn1d seed=31415 @ 23:06:41 ===
+[W NNPACK.cpp:61] Could not initialize NNPACK! Reason: Unsupported hardware.
+{
+  "model": "cnn1d",
+  "seed": 31415,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3742,
+  "flops_m_per_sample": 0.118602,
+  "latency_ms_per_sample_cpu": 0.2925502276048064,
+  "train_time_s": 122.79511942015961,
+  "accuracy": 0.99954,
+  "f1_macro": 0.973748128127397,
+  "f1_binary": 0.9997689835275211,
+  "precision": 0.9998895005424518,
+  "recall": 0.9996484955610011
+}
+
+=== model=kan seed=42 @ 23:08:57 ===
+{
+  "model": "kan",
+  "seed": 42,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3321,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.8294643368571997,
+  "train_time_s": 154.36727932002395,
+  "accuracy": 0.99966,
+  "f1_macro": 0.980463826004307,
+  "f1_binary": 0.9998292538392777,
+  "precision": 0.9998995540198481,
+  "recall": 0.9997589635432359
+}
+
+=== model=kan seed=1337 @ 23:11:46 ===
+{
+  "model": "kan",
+  "seed": 1337,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3321,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.4733435669913888,
+  "train_time_s": 151.18405862199143,
+  "accuracy": 0.99961,
+  "f1_macro": 0.977793224582996,
+  "f1_binary": 0.999804136240822,
+  "precision": 0.999914614055531,
+  "recall": 0.9996936828361956
+}
+
+=== model=kan seed=7 @ 23:14:30 ===
+{
+  "model": "kan",
+  "seed": 7,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3321,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.4803602769970894,
+  "train_time_s": 147.59726072615013,
+  "accuracy": 0.999665,
+  "f1_macro": 0.9807181753033714,
+  "f1_binary": 0.999831766079522,
+  "precision": 0.9999045767980995,
+  "recall": 0.9997589659639855
+}
+
+=== model=kan seed=2024 @ 23:17:11 ===
+{
+  "model": "kan",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3321,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.4895098740234971,
+  "train_time_s": 153.86553040100262,
+  "accuracy": 0.9997,
+  "f1_macro": 0.9827425406055508,
+  "f1_binary": 0.9998493423794864,
+  "precision": 0.9999146217744609,
+  "recall": 0.9997840715074822
+}
+
+=== model=kan seed=31415 @ 23:19:59 ===
+{
+  "model": "kan",
+  "seed": 31415,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3321,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.6565732415765524,
+  "train_time_s": 148.79056493425742,
+  "accuracy": 0.999645,
+  "f1_macro": 0.9795436785615466,
+  "f1_binary": 0.9998217231586639,
+  "precision": 0.9998995545243153,
+  "recall": 0.9997439039087294
+}
+
+=== model=fkan seed=42 @ 23:22:42 ===
+{
+  "model": "fkan",
+  "seed": 42,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3280,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.24315031245350838,
+  "train_time_s": 133.5110334251076,
+  "accuracy": 0.99963,
+  "f1_macro": 0.9788364771003017,
+  "f1_binary": 0.9998141842689406,
+  "precision": 0.9999045724847316,
+  "recall": 0.9997238123932911
+}
+
+=== model=fkan seed=1337 @ 23:25:09 ===
+{
+  "model": "fkan",
+  "seed": 1337,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3280,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.22722787223756313,
+  "train_time_s": 132.87456298898906,
+  "accuracy": 0.999385,
+  "f1_macro": 0.9658488682562745,
+  "f1_binary": 0.999691103013378,
+  "precision": 0.9999145947520988,
+  "recall": 0.9994677111579793
+}
+
+=== model=fkan seed=7 @ 23:27:35 ===
+{
+  "model": "fkan",
+  "seed": 7,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3280,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.23398839868605137,
+  "train_time_s": 129.07424002187327,
+  "accuracy": 0.99968,
+  "f1_macro": 0.9815499600646003,
+  "f1_binary": 0.9998393001521627,
+  "precision": 0.9999045782358023,
+  "recall": 0.9997740305912364
+}
+
+=== model=fkan seed=2024 @ 23:29:57 ===
+{
+  "model": "fkan",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3280,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.2412898000329733,
+  "train_time_s": 128.03074119100347,
+  "accuracy": 0.999665,
+  "f1_macro": 0.9809786252851909,
+  "f1_binary": 0.9998317559406475,
+  "precision": 0.9999547945411897,
+  "recall": 0.9997087476147434
+}
+
+=== model=fkan seed=31415 @ 23:32:19 ===
+{
+  "model": "fkan",
+  "seed": 31415,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3280,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.236566630192101,
+  "train_time_s": 129.70227063586935,
+  "accuracy": 0.999315,
+  "f1_macro": 0.9601638499234924,
+  "f1_binary": 0.9996560148440894,
+  "precision": 0.99969366591506,
+  "recall": 0.9996183666090869
+}
+
+=== model=cmlp seed=42 @ 23:34:41 ===
+{
+  "model": "cmlp",
+  "seed": 42,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3402,
+  "flops_m_per_sample": 0.00645,
+  "latency_ms_per_sample_cpu": 0.1870035007596016,
+  "train_time_s": 150.36264682095498,
+  "accuracy": 0.999505,
+  "f1_macro": 0.9714437733543693,
+  "f1_binary": 0.9997514180470498,
+  "precision": 0.9998041372244738,
+  "recall": 0.9996987044290448
+}
+
+=== model=cmlp seed=1337 @ 23:37:25 ===
+{
+  "model": "cmlp",
+  "seed": 1337,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3402,
+  "flops_m_per_sample": 0.00645,
+  "latency_ms_per_sample_cpu": 0.18318840768188238,
+  "train_time_s": 150.9224725458771,
+  "accuracy": 0.99944,
+  "f1_macro": 0.966605251338539,
+  "f1_binary": 0.9997188162162705,
+  "precision": 0.9996284692934891,
+  "recall": 0.9998091794717284
+}
+
+=== model=cmlp seed=7 @ 23:40:08 ===
+{
+  "model": "cmlp",
+  "seed": 7,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3402,
+  "flops_m_per_sample": 0.00645,
+  "latency_ms_per_sample_cpu": 0.18339246045798063,
+  "train_time_s": 149.44449208164588,
+  "accuracy": 0.999595,
+  "f1_macro": 0.9766090612000653,
+  "f1_binary": 0.9997966157871345,
+  "precision": 0.9998543584489678,
+  "recall": 0.9997388797943176
+}
+
+=== model=cmlp seed=2024 @ 23:42:50 ===
+{
+  "model": "cmlp",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3402,
+  "flops_m_per_sample": 0.00645,
+  "latency_ms_per_sample_cpu": 0.18039470072835684,
+  "train_time_s": 153.2468430385925,
+  "accuracy": 0.999595,
+  "f1_macro": 0.9765553694336504,
+  "f1_binary": 0.9997966178298369,
+  "precision": 0.999834274952919,
+  "recall": 0.9997589635432359
+}
+
+=== model=cmlp seed=31415 @ 23:45:36 ===
+{
+  "model": "cmlp",
+  "seed": 31415,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3402,
+  "flops_m_per_sample": 0.00645,
+  "latency_ms_per_sample_cpu": 0.18771018832921982,
+  "train_time_s": 150.66974524781108,
+  "accuracy": 0.9996,
+  "f1_macro": 0.9766977109858571,
+  "f1_binary": 0.999799134268698,
+  "precision": 0.9998292589839906,
+  "recall": 0.9997690113686578
+}
+
+=== aggregating ===
+model  accuracy_mean  accuracy_std  f1_macro_mean  f1_macro_std  params  flops_m  latency_ms  train_time_s_mean  n_seeds
+ cmlp       0.999547      0.000072       0.973582      0.004499    3402 0.006450    0.184338         150.929240        5
+cnn1d       0.999524      0.000032       0.972702      0.001756    3742 0.118602    0.256539         122.361652        5
+ fkan       0.999535      0.000172       0.973476      0.009818    3280 0.000000    0.236445         130.638570        5
+  kan       0.999656      0.000033       0.980252      0.001804    3321 0.000000    0.585850         151.160939        5
+  mlp       0.999639      0.000039       0.979266      0.002298    3327 0.003250    0.036853         110.226111        5
+
+wrote results/summary.csv and results/raw.csv
+
+=== run_all.sh finished at Thứ năm, 14 Tháng 5 năm 2026 23:48:20 +07 ===

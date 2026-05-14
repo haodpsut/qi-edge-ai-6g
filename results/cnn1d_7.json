@@ -1,0 +1,15 @@
+{
+  "model": "cnn1d",
+  "seed": 7,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3742,
+  "flops_m_per_sample": 0.118602,
+  "latency_ms_per_sample_cpu": 0.22262832149863243,
+  "train_time_s": 125.60789315868169,
+  "accuracy": 0.999475,
+  "f1_macro": 0.9698510209303559,
+  "f1_binary": 0.999736347178036,
+  "precision": 0.999819194511549,
+  "recall": 0.9996535135732292
+}

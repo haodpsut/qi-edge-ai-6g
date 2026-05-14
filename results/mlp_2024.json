@@ -1,0 +1,15 @@
+{
+  "model": "mlp",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3327,
+  "flops_m_per_sample": 0.00325,
+  "latency_ms_per_sample_cpu": 0.036864541471004486,
+  "train_time_s": 112.75184552976862,
+  "accuracy": 0.99958,
+  "f1_macro": 0.9758395568477711,
+  "f1_binary": 0.999789079331281,
+  "precision": 0.9998543547917274,
+  "recall": 0.9997238123932911
+}

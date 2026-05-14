@@ -1,0 +1,15 @@
+{
+  "model": "cmlp",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3402,
+  "flops_m_per_sample": 0.00645,
+  "latency_ms_per_sample_cpu": 0.18039470072835684,
+  "train_time_s": 153.2468430385925,
+  "accuracy": 0.999595,
+  "f1_macro": 0.9765553694336504,
+  "f1_binary": 0.9997966178298369,
+  "precision": 0.999834274952919,
+  "recall": 0.9997589635432359
+}

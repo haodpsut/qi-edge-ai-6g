@@ -1,0 +1,15 @@
+{
+  "model": "fkan",
+  "seed": 2024,
+  "n_samples": 1000000,
+  "epochs": 15,
+  "params": 3280,
+  "flops_m_per_sample": 0.0,
+  "latency_ms_per_sample_cpu": 0.2412898000329733,
+  "train_time_s": 128.03074119100347,
+  "accuracy": 0.999665,
+  "f1_macro": 0.9809786252851909,
+  "f1_binary": 0.9998317559406475,
+  "precision": 0.9999547945411897,
+  "recall": 0.9997087476147434
+}
