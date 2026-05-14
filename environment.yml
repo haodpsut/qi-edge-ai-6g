@@ -1,13 +1,12 @@
+# Single-channel conda env to avoid libmamba SOLVER_RULE_STRICT_REPO_PRIORITY.
+# PyTorch (with CUDA 12.1) is installed via pip from the official PyTorch index.
+# This is the recommended pattern when conda-forge / pytorch / nvidia channels
+# disagree on package priority.
 name: qi-edge-ai-6g
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
-  - defaults
 dependencies:
   - python=3.11
-  - pytorch=2.3.*
-  - pytorch-cuda=12.1
   - numpy=1.26.*
   - scipy=1.13.*
   - scikit-learn=1.5.*
@@ -18,6 +17,8 @@ dependencies:
   - pyarrow=16.*
   - pip
   - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.3.1
       - fvcore==0.1.5.post20221221
       - thop==0.1.1.post2209072238
-      - kaggle==1.6.*
+      - kaggle==1.6.17

@@ -9,6 +9,16 @@ conda env create -f environment.yml
 conda activate qi-edge-ai-6g
 ```
 
+If the conda solver hangs on `SOLVER_RULE_STRICT_REPO_PRIORITY` warnings,
+run with the classic solver:
+
+```bash
+conda env create -f environment.yml --solver classic
+```
+
+(`environment.yml` is already simplified to a single `conda-forge` channel
+plus pip for PyTorch — this combination usually solves in under a minute.)
+
 ## Dataset
 
 NF-BoT-IoT-v2 (Sarhan et al., NetFlow v2, 43 features, 37.7M flows).
