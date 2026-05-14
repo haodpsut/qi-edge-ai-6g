@@ -11,15 +11,27 @@ conda activate qi-edge-ai-6g
 
 ## Dataset
 
-NF-BoT-IoT-v2 (Sarhan et al., NetFlow v2). Place CSV at:
+NF-BoT-IoT-v2 (Sarhan et al., NetFlow v2, 43 features, 37.7M flows).
 
-```
-data/raw/NF-BoT-IoT-v2.csv
+**Auto-download via Kaggle:**
+
+```bash
+# One-time setup: put Kaggle API token at ~/.kaggle/kaggle.json
+# (get it from https://www.kaggle.com/settings/account → "Create New Token")
+chmod 600 ~/.kaggle/kaggle.json
+
+# Then:
+bash scripts/fetch_data.sh
 ```
 
-(or set `--data-path` flag). The loader sub-samples to 1M rows for the
-case-study benchmark; full set takes too long for 5 seeds × 5 models on
-a magazine-paper budget.
+Source mirror: [`dhoogla/nfbotiotv2`](https://www.kaggle.com/datasets/dhoogla/nfbotiotv2)
+
+The loader accepts both CSV and Parquet (Kaggle mirror ships Parquet) and
+sub-samples to 1M rows by default for the case-study benchmark (~30 min on
+RTX 4090 for the full 25-run grid).
+
+Manual fallback: download from https://www.kaggle.com/datasets/dhoogla/nfbotiotv2
+and unzip into `data/raw/`.
 
 ## Models (all parameter-matched to ~3.6K)
 

@@ -23,18 +23,36 @@ DROP_COLS = [
 LABEL_COL = "Label"
 
 
+def _read_any(path: Path) -> pd.DataFrame:
+    """Read CSV or Parquet, auto-detect by extension. If path doesn't exist,
+    try the sibling with the other extension."""
+    if path.exists():
+        if path.suffix.lower() in (".parquet", ".pq"):
+            return pd.read_parquet(path)
+        return pd.read_csv(path)
+    # auto-fallback
+    for alt_suffix in (".parquet", ".csv"):
+        alt = path.with_suffix(alt_suffix)
+        if alt.exists():
+            if alt_suffix == ".parquet":
+                return pd.read_parquet(alt)
+            return pd.read_csv(alt)
+    raise FileNotFoundError(
+        f"Dataset not found. Tried {path} and {path.with_suffix('.parquet')} / "
+        f"{path.with_suffix('.csv')}. Run scripts/fetch_data.sh first."
+    )
+
+
 def load_nf_bot_iot_v2(
     csv_path: str | Path,
     n_samples: int | None = 1_000_000,
     test_size: float = 0.2,
     seed: int = 42,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, int]:
-    """Return (X_train, X_test, y_train, y_test, n_features) as numpy arrays."""
-    csv_path = Path(csv_path)
-    if not csv_path.exists():
-        raise FileNotFoundError(f"Dataset not found at {csv_path}")
+    """Return (X_train, X_test, y_train, y_test, n_features) as numpy arrays.
 
-    df = pd.read_csv(csv_path)
+    Accepts CSV or Parquet (dhoogla/nfbotiotv2 Kaggle mirror ships parquet)."""
+    df = _read_any(Path(csv_path))
     if n_samples and len(df) > n_samples:
         df = df.sample(n=n_samples, random_state=seed).reset_index(drop=True)
 
