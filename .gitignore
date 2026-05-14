@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# data
+data/raw/
+data/processed/
+*.csv.gz
+*.parquet
+NF-*.csv
+
+# results
+results/checkpoints/
+results/logs/
+*.pth
+*.pt
+
+# editors
+.vscode/
+.idea/
+.DS_Store
+
+# env
+.env
+.venv/

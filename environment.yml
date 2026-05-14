@@ -1,0 +1,21 @@
+name: qi-edge-ai-6g
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pytorch=2.3.*
+  - pytorch-cuda=12.1
+  - numpy=1.26.*
+  - scipy=1.13.*
+  - scikit-learn=1.5.*
+  - pandas=2.2.*
+  - matplotlib=3.9.*
+  - pyyaml
+  - tqdm
+  - pip
+  - pip:
+      - fvcore==0.1.5.post20221221
+      - thop==0.1.1.post2209072238

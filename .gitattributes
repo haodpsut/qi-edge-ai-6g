@@ -1,0 +1,4 @@
+# Force LF on Unix-side files so RTX 4090 Linux server runs them cleanly.
+*.sh text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
