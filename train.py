@@ -78,7 +78,7 @@ def main() -> None:
     ap.add_argument("--epochs", type=int, default=15)
     ap.add_argument("--batch-size", type=int, default=512)
     ap.add_argument("--lr", type=float, default=1e-3)
-    ap.add_argument("--data-path", default="data/raw/NF-BoT-IoT-v2.csv")
+    ap.add_argument("--data-path", default="data/raw/NF-BoT-IoT-V2.parquet")
     ap.add_argument("--n-samples", type=int, default=1_000_000)
     ap.add_argument("--out-dir", default="results")
     ap.add_argument("--quick", action="store_true",

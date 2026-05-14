@@ -42,4 +42,5 @@ echo "Files in data/raw/:"
 ls -lh data/raw/
 
 echo ""
-echo "Done. Verify with: python -c \"from data import load_nf_bot_iot_v2; X,_,_,_,d=load_nf_bot_iot_v2('data/raw/NF-BoT-IoT-v2.parquet', n_samples=1000); print('OK', X.shape, 'features:', d)\""
+echo "Done. Verify with:"
+echo "  python -c \"from data import load_nf_bot_iot_v2; X,_,_,_,d=load_nf_bot_iot_v2('data/raw/NF-BoT-IoT-V2.parquet', n_samples=1000); print('OK', X.shape, 'features:', d)\""

@@ -21,25 +21,41 @@ DROP_COLS = [
     "Attack",
 ]
 LABEL_COL = "Label"
+_READABLE = (".parquet", ".pq", ".csv")
+
+
+def _read_by_ext(p: Path) -> pd.DataFrame:
+    if p.suffix.lower() in (".parquet", ".pq"):
+        return pd.read_parquet(p)
+    return pd.read_csv(p)
 
 
 def _read_any(path: Path) -> pd.DataFrame:
-    """Read CSV or Parquet, auto-detect by extension. If path doesn't exist,
-    try the sibling with the other extension."""
+    """Read CSV or Parquet. Falls back across:
+       1. exact path
+       2. suffix swap (.csv <-> .parquet)
+       3. case-insensitive stem match in parent dir
+          (Kaggle ships 'NF-BoT-IoT-V2.parquet' with capital V; Linux is
+          case-sensitive, so we resolve that here.)
+    """
+    path = Path(path)
     if path.exists():
-        if path.suffix.lower() in (".parquet", ".pq"):
-            return pd.read_parquet(path)
-        return pd.read_csv(path)
-    # auto-fallback
-    for alt_suffix in (".parquet", ".csv"):
-        alt = path.with_suffix(alt_suffix)
+        return _read_by_ext(path)
+    for alt in (path.with_suffix(".parquet"), path.with_suffix(".csv")):
         if alt.exists():
-            if alt_suffix == ".parquet":
-                return pd.read_parquet(alt)
-            return pd.read_csv(alt)
+            return _read_by_ext(alt)
+    if path.parent.is_dir():
+        stem_lower = path.stem.lower()
+        for p in path.parent.iterdir():
+            if (
+                p.is_file()
+                and p.stem.lower() == stem_lower
+                and p.suffix.lower() in _READABLE
+            ):
+                return _read_by_ext(p)
     raise FileNotFoundError(
-        f"Dataset not found. Tried {path} and {path.with_suffix('.parquet')} / "
-        f"{path.with_suffix('.csv')}. Run scripts/fetch_data.sh first."
+        f"Dataset not found at {path} (also tried .csv/.parquet siblings "
+        f"and case-insensitive match). Run scripts/fetch_data.sh first."
     )
 
 
