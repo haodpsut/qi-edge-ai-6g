@@ -1,0 +1,17 @@
+=== Per-model summary (mean over 5 seeds) ===
+       params  acc_mean  acc_std  f1_mean   f1_std  latency_ms  latency_std  flops_m    train_s
+model                                                                                          
+cmlp     3402   0.99955  0.00007  0.97358  0.00450     0.18434      0.00301  0.00645  150.92924
+cnn1d    3742   0.99952  0.00003  0.97270  0.00176     0.25654      0.02686  0.11860  122.36165
+fkan     3280   0.99954  0.00017  0.97348  0.00982     0.23644      0.00631  0.00000  130.63857
+kan      3321   0.99966  0.00003  0.98025  0.00180     0.58585      0.15606  0.00000  151.16094
+mlp      3327   0.99964  0.00004  0.97927  0.00230     0.03685      0.00071  0.00325  110.22611
+
+=== Welch t-test on F1-macro (KAN vs each baseline) ===
+  KAN vs mlp   : t=+0.755  p=0.4731  n.s.
+  KAN vs cnn1d : t=+6.706  p=0.0002  ***
+  KAN vs fkan  : t=+1.518  p=0.1992  n.s.
+  KAN vs cmlp  : t=+3.077  p=0.0258  *
+
+=== Pareto frontier (F1 vs latency) ===
+  Pareto-optimal models: ['kan', 'mlp']
